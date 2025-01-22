@@ -19,4 +19,20 @@ function addBookToLibrary(title, author, pages, read) {
 
 myLibrary.forEach((book) => {
   console.log(book);
+
+  const tableTitle = document.querySelector(".title");
+  const tableAuthor = document.querySelector(".author");
+  const tablePages = document.querySelector(".pages");
+  const tableRead = document.querySelector(".read");
+
+  tableTitle.textContent = book.title;
+  tableAuthor.textContent = book.author;
+  tablePages.textContent = book.pages;
+  tableRead.textContent = book.read;
+
+  const table = document.querySelector(".table");
+  table.appendChild(tableTitle);
+  table.appendChild(tableAuthor);
+  table.appendChild(tablePages);
+  table.appendChild(tableRead);
 });
