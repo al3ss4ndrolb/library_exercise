@@ -3,7 +3,7 @@ const myLibrary = [
   { title: "The Idiot", author: "Fyodor Dostoevsky", pages: 659, read: false },
 ];
 
-function Book() {
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -11,28 +11,42 @@ function Book() {
 }
 
 function addBookToLibrary(title, author, pages, read) {
-  // take params, create a book then store it in the array
   const book = new Book(title, author, pages, read);
-
   myLibrary.push(book);
+  displayBooks(); // Update the display when a new book is added
 }
 
-myLibrary.forEach((book) => {
-  console.log(book);
+// Function to display books in the table
+function displayBooks() {
+  const tableBody = document.querySelector(".books-table tbody");
+  tableBody.innerHTML = ""; // Clear the table before adding rows
 
-  const tableTitle = document.querySelector(".title");
-  const tableAuthor = document.querySelector(".author");
-  const tablePages = document.querySelector(".pages");
-  const tableRead = document.querySelector(".read");
+  myLibrary.forEach((book) => {
+    const row = document.createElement("tr");
 
-  tableTitle.textContent = book.title;
-  tableAuthor.textContent = book.author;
-  tablePages.textContent = book.pages;
-  tableRead.textContent = book.read;
+    // Create cells for the row
+    const titleCell = document.createElement("td");
+    titleCell.textContent = book.title;
 
-  const table = document.querySelector(".table");
-  table.appendChild(tableTitle);
-  table.appendChild(tableAuthor);
-  table.appendChild(tablePages);
-  table.appendChild(tableRead);
-});
+    const authorCell = document.createElement("td");
+    authorCell.textContent = book.author;
+
+    const pagesCell = document.createElement("td");
+    pagesCell.textContent = book.pages;
+
+    const readCell = document.createElement("td");
+    readCell.textContent = book.read ? "Yes" : "No";
+
+    // Append cells to the row
+    row.appendChild(titleCell);
+    row.appendChild(authorCell);
+    row.appendChild(pagesCell);
+    row.appendChild(readCell);
+
+    // Append the row to the table body
+    tableBody.appendChild(row);
+  });
+}
+
+// Initial display of books
+displayBooks();
