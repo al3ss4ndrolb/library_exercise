@@ -1,6 +1,12 @@
 const myLibrary = [
   { title: "The Hobbit", author: "J.R.R. Tolkien", pages: 295, read: true },
   { title: "The Idiot", author: "Fyodor Dostoevsky", pages: 659, read: false },
+  {
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    pages: 277,
+    read: true,
+  },
 ];
 
 function Book(title, author, pages, read) {

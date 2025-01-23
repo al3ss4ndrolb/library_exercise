@@ -1,5 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 table,
 th,
 td {
   border: 1px solid black;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+table {
+  margin: 20px auto; /* Center the table */
+}
+
+#add-book {
+  display: flex;
+  margin: 20px auto;
+  justify-content: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
 }
