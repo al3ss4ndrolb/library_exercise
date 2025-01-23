@@ -17,11 +17,28 @@
           <th>Read</th>
         </tr>
       </thead>
-      <tr>
-        <tbody></tbody>
-      </tr>
+      <tbody></tbody>
     </table>
     <button id="add-book">Add a book</button>
+    <dialog id="book-dialog">
+      <form id="book-form" method="dialog">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required />
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required />
+        <label for="pages">Number of pages:</label>
+        <input type="number" id="pages" name="pages" required />
+        <label for="read">Read:</label>
+        <input type="checkbox" id="read" name="read" />
+        <button type="submit">Add Book</button>
+        <button
+          type="button"
+          onclick="document.querySelector('#book-dialog').close()"
+        >
+          Cancel
+        </button>
+      </form>
+    </dialog>
     <script src="main.js"></script>
   </body>
 </html>

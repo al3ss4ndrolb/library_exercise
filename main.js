@@ -54,5 +54,24 @@ function displayBooks() {
   });
 }
 
+const addBtn = document.querySelector("#add-book");
+const dialog = document.querySelector("#book-dialog");
+const form = document.querySelector("#book-form");
+
+addBtn.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const title = form.elements["title"].value;
+  const author = form.elements["author"].value;
+  const pages = form.elements["pages"].value;
+  const read = form.elements["read"].checked;
+
+  addBookToLibrary(title, author, pages, read);
+  dialog.close();
+});
+
 // Initial display of books
 displayBooks();

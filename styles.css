@@ -28,4 +28,5 @@ table {
   border-radius: 5px;
   border: 1px solid black;
   cursor: pointer;
+  font-size: medium;
 }
